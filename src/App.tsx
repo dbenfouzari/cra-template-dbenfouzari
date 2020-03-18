@@ -6,6 +6,7 @@ import React from 'react';
  * @see https://create-react-app.dev/docs/adding-images-fonts-and-files#adding-svgs
  */
 import { ReactComponent as Logo } from './logo.svg';
+import Button from 'components/button';
 
 import './App.css';
 
@@ -26,6 +27,7 @@ function App() {
         >
           Learn React
         </a>
+        <Button>Hello absolute import button</Button>
       </header>
     </div>
   );
