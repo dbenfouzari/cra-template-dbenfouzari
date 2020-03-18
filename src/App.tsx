@@ -1,12 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
+
+/**
+ * We can now import a SVG as a component
+ * @see https://create-react-app.dev/docs/adding-images-fonts-and-files#adding-svgs
+ */
+import { ReactComponent as Logo } from './logo.svg';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <Logo className="App-logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
