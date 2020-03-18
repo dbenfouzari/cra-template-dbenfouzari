@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './button.module.css';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -6,19 +7,9 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ children, onClick }) => (
-  <button style={styles} onClick={onClick}>
+  <button className={styles.button} onClick={onClick}>
     {children}
   </button>
 );
-
-const styles = {
-  border: '1px solid #eee',
-  borderRadius: 3,
-  backgroundColor: '#FFFFFF',
-  cursor: 'pointer',
-  fontSize: 15,
-  padding: '3px 10px',
-  margin: 10,
-};
 
 export default Button;
