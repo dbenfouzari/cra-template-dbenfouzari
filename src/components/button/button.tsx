@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -6,7 +6,9 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ children, onClick }) => (
-  <button style={styles} onClick={onClick}>{children}</button>
+  <button style={styles} onClick={onClick}>
+    {children}
+  </button>
 );
 
 const styles = {
@@ -16,7 +18,7 @@ const styles = {
   cursor: 'pointer',
   fontSize: 15,
   padding: '3px 10px',
-  margin: 10
+  margin: 10,
 };
 
 export default Button;
