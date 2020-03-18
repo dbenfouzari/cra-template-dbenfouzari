@@ -1,35 +1,41 @@
-import React from 'react';
-// import logo from './logo.svg';
+import React, { CSSProperties } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { About, Home } from 'pages';
 
-/**
- * We can now import a SVG as a component
- * @see https://create-react-app.dev/docs/adding-images-fonts-and-files#adding-svgs
- */
-import { ReactComponent as Logo } from './logo.svg';
-import Button from 'components/button';
+const navStyles: CSSProperties = {
+  listStyle: 'none',
+  flexDirection: 'row',
+  display: 'flex',
+};
 
-import './App.css';
+const listElementStyle: CSSProperties = {
+  padding: '0 15px',
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Logo className="App-logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button>Hello absolute import button</Button>
-      </header>
-    </div>
+    <Router>
+      <nav>
+        <ul style={navStyles}>
+          <li style={listElementStyle}>
+            <Link to="/">Home</Link>
+          </li>
+          <li style={listElementStyle}>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+
+        <Route path="/about">
+          <About />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
