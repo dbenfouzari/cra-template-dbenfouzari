@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint . --ext .js,.ts,.tsx",
-    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check"
+    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "analyze": "cross-env ANALYZE=true yarn build"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -27,12 +28,15 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "commitlint-config-gitmoji": "^1.0.1",
+    "craco": "^0.0.3",
+    "cross-env": "^7.0.2",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "webpack-bundle-analyzer": "^3.6.1"
   },
   "dependencies": {
     "react": "^16.13.0",
