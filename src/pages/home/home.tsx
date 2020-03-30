@@ -6,7 +6,7 @@ import React from 'react';
 import { ReactComponent as Logo } from 'logo.svg';
 import styles from './home.module.css';
 
-const Home = () => (
+const Home: React.FC = () => (
   <div className={styles.App}>
     <header className={styles.AppHeader}>
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
