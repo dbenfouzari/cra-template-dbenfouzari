@@ -7,12 +7,31 @@ export default {
   component: Button,
 };
 
-export const Text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+export const All = () => (
+  <>
+    <Text />
+    <Hovered />
+    <Focused />
+    <Disabled />
+  </>
+);
 
-export const Emoji = () => (
-  <Button onClick={action('clicked')}>
-    <span role="img" aria-label="so cool">
-      😀 😎 👍 💯
-    </span>
+export const Text = () => <Button onClick={action('clicked')}>Normal</Button>;
+
+export const Hovered = () => (
+  <Button onClick={action('clicked')} hover>
+    Hello Button
+  </Button>
+);
+
+export const Focused = () => (
+  <Button onClick={action('clicked')} focus>
+    Hello Button
+  </Button>
+);
+
+export const Disabled = () => (
+  <Button onClick={action('clicked')} disabled>
+    Hello Button
   </Button>
 );

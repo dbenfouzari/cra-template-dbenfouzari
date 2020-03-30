@@ -1,0 +1,55 @@
+@import '../../styles/_colors.scss';
+
+$main-color: $primary;
+$darker-primary: darken($main-color, 10%);
+$darkest-primary: darken($main-color, 20%);
+$lighter-primary: lighten($main-color, 10%);
+
+.button {
+  background-color: $main-color;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  min-width: 186px;
+  line-height: 23px;
+  margin: 10px;
+  padding: 18px 24px;
+
+  &:hover {
+    @extend .hover;
+  }
+
+  &:focus {
+    @extend .focus;
+  }
+
+  &:active {
+    background-color: $darkest-primary !important;
+  }
+}
+
+.hover {
+  background-color: $darker-primary;
+}
+
+.disabled {
+  background-color: $lighter-primary;
+  color: $darker-primary;
+  cursor: unset;
+  opacity: 0.3;
+
+  &:hover {
+    background-color: $lighter-primary;
+    opacity: 0.3;
+  }
+}
+
+.focus {
+  @extend .hover;
+
+  outline: 2px solid $darker-primary;
+  outline-offset: 2px;
+}

@@ -11,6 +11,7 @@ describe('Components/button', function() {
     );
 
     expect(getByText(/click here/i)).toBeInTheDocument();
+    fireEvent.click(getByText(/click here/i)); // have to do this to get 100% coverage
   });
 
   it('should correctly handle click', () => {
