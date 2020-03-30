@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Button from 'components/button';
 import { selectCount, decrement, increment, incrementAsync } from 'modules/counter';
-import useAction from 'modules/useAction';
+import useAction from 'hooks/useAction';
 
 const About: React.FC = () => {
   const count = useSelector(selectCount);
